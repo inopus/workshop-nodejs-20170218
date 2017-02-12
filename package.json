@@ -1,0 +1,8 @@
+{
+    "name": "Workshop_NodeJS_Mackenzie_2070218",
+    "main": "server.js",
+    "dependencies": {
+        "ejs": "*",
+        "express": "*"
+    }
+}
