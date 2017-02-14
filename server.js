@@ -3,12 +3,16 @@
 var express = require('express');
 var app = express();
 
-// set the view engine to ejs
 app.set('view engine', 'ejs');
 
-// index
+app.use(express.static('./views'));
+
 app.get('/', function (req, res) {
     res.render('paginas/index');
+});
+
+app.get('/sobre', function (req, res) {
+    res.render('paginas/sobre');
 });
 
 var porta = 8080;
