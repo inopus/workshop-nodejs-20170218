@@ -7,6 +7,10 @@ app.set('view engine', 'ejs');
 
 app.use(express.static('./views'));
 
+app.get('/hello_world', function (req, res) {
+    res.render('paginas/hello_world');
+});
+
 app.get('/', function (req, res) {
     res.render('paginas/index');
 });
