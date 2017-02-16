@@ -1,5 +1,14 @@
 <% include ../partes/cabecalho %>
+    <% if(msg == "sucesso") {
+    %>
+        <script>
+            alert("Postagem realizada com sucesso.");
+        </script>
+        <% } else if(msg == "erro") { %>
+            <script>
+                alert("Erro ao realizar a postagem  ");
+            </script>
+            <% } %>
+                <p>index</p>
 
-    <p>index</p>
-
-    <% include ../partes/rodape %>
+                <% include ../partes/rodape %>

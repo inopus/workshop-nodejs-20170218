@@ -1,8 +1,17 @@
 {
-    "name": "Workshop_NodeJS_Mackenzie_2070218",
-    "main": "server.js",
-    "dependencies": {
-        "ejs": "*",
-        "express": "*"
-    }
+  "name": "zzzzzzz",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "*",
+    "ejs": "*",
+    "express": "*",
+    "mongodb": "^2.2.24"
+  }
 }
