@@ -1,6 +1,6 @@
 #!/bin/env node
 
-dbCon = new Array();
+dbCon = new Array(); // Array para armazenar todas as conexões com os BDs
 
 module.exports = function () {
     require('mongodb').MongoClient.connect("mongodb://localhost:27017/db", function (err, conn) {
