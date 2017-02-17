@@ -4,10 +4,9 @@
             <label for="titulo">Título</label>
             <input type="text" name="titulo" id="titulo" method="get">
         </div>
-        <div class="campo">
-            <label for="categoria">Categoria</label>
+        <div class="campo input-field">
             <select name="categoria">
-                <option value="">-- Selecione uma opção --</option>
+                <option value="">Selecione uma opção</option>
                 <option value="Jogos">Jogos</option>
                 <option value="Notícias">Notícias</option>
                 <option value="Aleatórios">Aleatórios</option>
@@ -21,4 +20,9 @@
             <button>Gravar</button>
         </div>
     </form>
-    <% include ../partes/rodape %>
+
+    <script>
+        $(document).ready(function () {
+            $('select').material_select();
+        });
+    </script>

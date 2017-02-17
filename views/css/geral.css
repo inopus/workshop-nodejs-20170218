@@ -17,3 +17,23 @@ form .campo {
 form label {
     display: block;
 }
+
+.postagem {
+    padding: 1em;
+}
+
+.postagem .titulo-postagem {
+    font-size: 2em;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.postagem .categoria-postagem {
+    font-size: 1.2em;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.postagem .categoria-postagem {
+    font-size: 1em;
+}
