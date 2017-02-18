@@ -1,0 +1,26 @@
+<% include ../partes/cabecalho %>
+    <% if(titulo && categoria && postagem) {
+    %>
+        <div class="row">
+            <div class="col s12">
+                <div class="card postagem">
+                    <p class="titulo-postagem">
+                        <%=titulo%>
+                    </p>
+                    <p class="categoria-postagem">
+                        <%=categoria%>
+                    </p>
+                    <p class="conteudo-postagem">
+                        <%=postagem%>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <%
+} else {
+%>
+            <meta http-equiv="refresh" content="0;URL=/">
+            <%
+}
+    %>
+                <% include ../partes/rodape %>

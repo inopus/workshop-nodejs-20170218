@@ -1,30 +1,32 @@
 <% include ../partes/cabecalho %>
-    <% if(msg == "sucesso") {
-    %>
-        <script>
-            alert("Postagem realizada com sucesso.");
-        </script>
-        <% } else if(msg == "erro") { %>
-            <script>
-                alert("Erro ao realizar a postagem  ");
-            </script>
-            <% } %>
-                <div class="row">
-                    <div class="col s12">
-                        <div class="card postagem">
-                            <p class="titulo-postagem">Título da postagem</p>
-                            <p class="categoria-postagem">Categoria</p>
-                            <p class="conteudo-postagem">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nulla ante, posuere at egestas in, varius a nibh. Phasellus convallis hendrerit imperdiet. Proin elementum congue dolor sit amet ultrices. Donec eget dui mollis, ornare ex in, eleifend ipsum. Duis dictum neque non porta dictum. Nam ultricies dolor elit, in sagittis sapien ultrices at. Aliquam id diam id risus ultricies viverra sed nec augue. Suspendisse et mauris sapien. Duis enim lorem, pellentesque at placerat ac, accumsan blandit metus. Etiam sed dolor eget sem varius blandit. Donec tempus venenatis eros, et posuere orci congue sed. Aenean dapibus, justo nec ultricies lacinia, nibh ante pellentesque libero, sit amet luctus erat nunc at urna. Etiam dapibus leo quis ex accumsan, rutrum facilisis libero rutrum. Vestibulum at diam porta lacus auctor vestibulum. Duis cursus ex diam, vitae feugiat lacus malesuada sit amet. Aliquam sit amet nisi consequat, lacinia enim vitae, finibus arcu. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Morbi a pulvinar ante, ac pellentesque eros. Fusce nunc justo, vehicula ut nulla accumsan, venenatis condimentum mi. Quisque bibendum dolor felis, sit amet volutpat urna dictum fringilla. Praesent pretium elementum gravida. Sed vehicula urna quis vestibulum aliquam. Donec pretium tempor eleifend. Sed quis justo gravida, elementum erat quis, gravida leo. In a pretium sem. Phasellus ante nulla, sagittis nec efficitur pharetra, blandit vitae purus. Suspendisse quam lacus, ultricies id vulputate vitae, cursus sit amet magna. Sed a commodo metus. Praesent imperdiet lorem nec est aliquam viverra. Pellentesque dolor tellus, facilisis a lectus sit amet, consequat blandit lectus. Suspendisse fringilla cursus neque, et lobortis nibh dapibus et. Curabitur et tellus ante. Donec id libero pellentesque, sodales nisi vel, dignissim turpis. Proin ultricies id erat ut molestie. Aenean vitae hendrerit elit. Praesent sed luctus dui. Ut a congue libero.</p>
-                        </div>
-                    </div>
-
-                    <div class="col s12">
-                        <div class="card postagem">
-                            <p class="titulo-postagem">Título da postagem</p>
-                            <p class="categoria-postagem">Categoria</p>
-                            <p class="conteudo-postagem">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nulla ante, posuere at egestas in, varius a nibh. Phasellus convallis hendrerit imperdiet. Proin elementum congue dolor sit amet ultrices. Donec eget dui mollis, ornare ex in, eleifend ipsum. Duis dictum neque non porta dictum. Nam ultricies dolor elit, in sagittis sapien ultrices at. Aliquam id diam id risus ultricies viverra sed nec augue. Suspendisse et mauris sapien. Duis enim lorem, pellentesque at placerat ac, accumsan blandit metus. Etiam sed dolor eget sem varius blandit. Donec tempus venenatis eros, et posuere orci congue sed. Aenean dapibus, justo nec ultricies lacinia, nibh ante pellentesque libero, sit amet luctus erat nunc at urna. Etiam dapibus leo quis ex accumsan, rutrum facilisis libero rutrum. Vestibulum at diam porta lacus auctor vestibulum. Duis cursus ex diam, vitae feugiat lacus malesuada sit amet. Aliquam sit amet nisi consequat, lacinia enim vitae, finibus arcu. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Morbi a pulvinar ante, ac pellentesque eros. Fusce nunc justo, vehicula ut nulla accumsan, venenatis condimentum mi. Quisque bibendum dolor felis, sit amet volutpat urna dictum fringilla. Praesent pretium elementum gravida. Sed vehicula urna quis vestibulum aliquam. Donec pretium tempor eleifend. Sed quis justo gravida, elementum erat quis, gravida leo. In a pretium sem. Phasellus ante nulla, sagittis nec efficitur pharetra, blandit vitae purus. Suspendisse quam lacus, ultricies id vulputate vitae, cursus sit amet magna. Sed a commodo metus. Praesent imperdiet lorem nec est aliquam viverra. Pellentesque dolor tellus, facilisis a lectus sit amet, consequat blandit lectus. Suspendisse fringilla cursus neque, et lobortis nibh dapibus et. Curabitur et tellus ante. Donec id libero pellentesque, sodales nisi vel, dignissim turpis. Proin ultricies id erat ut molestie. Aenean vitae hendrerit elit. Praesent sed luctus dui. Ut a congue libero.</p>
-                        </div>
+    <div class="row">
+        <% if(postagens.length > 0) {
+            for (var i = 0; i < postagens.length; i++) {
+                %>
+            <div class="col s12">
+                <div class="card postagem" style="cursor: pointer;" onclick="window.location.href='/detalhe/<%=postagens[i]._id%>'">
+                    <p class="titulo-postagem">
+                        <%=postagens[i].titulo%>
+                    </p>
+                    <p class="categoria-postagem">
+                        <%=postagens[i].categoria%>
+                    </p>
+                </div>
+            </div>
+            <%
+            }
+        } else {
+            %>
+                <div class="col s12">
+                    <div class="card postagem">
+                        <p class="conteudo-postagem">
+                            (Não há postagens disponíveis)
+                        </p>
                     </div>
                 </div>
+                <%
+        }
+        %>
+    </div>
 
-                <% include ../partes/rodape %>
+    <% include ../partes/rodape %>

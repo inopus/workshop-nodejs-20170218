@@ -46,13 +46,41 @@ app.post('/postar/salvar', function (req, res) {
     });
 });
 
-app.get('/detalhe', function (req, res) {
-    res.render('paginas/datelhe');
+app.get('/detalhe/:id', function (req, res) {
+    var clt = dbCon[0].collection("Postagem");
+    clt.findOne({
+        '_id': new mongodb.ObjectID(req.params.id)
+    }, function (err, result) {
+        if (err) {
+            console.log("*** Erro: ");
+            console.log(err);
+            console.log("***");
+            res.redirect("/?msg=erro");
+        } else {
+            res.render('paginas/detalhe', {
+                titulo: result.titulo,
+                categoria: result.categoria,
+                postagem: result.postagem
+            });
+        }
+    });
 });
 
 app.get('/', function (req, res) {
-    res.render('paginas/index', {
-        msg: req.query.msg
+    var clt = dbCon[0].collection("Postagem");
+    clt.find().toArray(function (err, results) {
+        if (err) {
+            console.log("*** Erro: ");
+            console.log(err);
+            console.log("***");
+            res.redirect("/?msg=erro");
+        } else {
+            console.log(results);
+            res.render('paginas/index', {
+                msg: req.query.msg,
+                postagens: results
+            });
+        }
     });
 });
 
