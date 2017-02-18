@@ -1,8 +1,7 @@
 <% include ../partes/cabecalho %>
     <div class="row">
         <% if(postagens.length > 0) {
-            for (var i = 0; i < postagens.length; i++) {
-                %>
+            for (var i = 0; i < postagens.length; i++) { %>
             <div class="col s12">
                 <div class="card postagem" style="cursor: pointer;" onclick="window.location.href='/detalhe/<%=postagens[i]._id%>'">
                     <p class="titulo-postagem">
@@ -28,5 +27,4 @@
         }
         %>
     </div>
-
     <% include ../partes/rodape %>
